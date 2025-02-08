@@ -21,7 +21,7 @@
         <section id="home">
     <p >На нашей планете живёт множество удивительных животных. 
         <br>Давайте узнаем о некоторых из них!</p>
-    <h2>Топ-5 интересных животных</h2>
+    <h2> вот Топ-5 интересных животных</h2>
     <ul>
         <li>Кенгуру 
             <img src="images/кенгуру.jpg" alt="Картинка кенгуру" width="194" height="182" title="это кенгуру" loading="lazy"><br>
@@ -39,22 +39,12 @@
                 Ваш браузер не поддерживает аудиотег
             </audio>            
         </li>
-        <li>Панда
-            <iframe
-                src="https://www.youtube.com/embed/ZoeR9E-V94k" 
-                width="560" 
-                height="315" 
-                frameborder="0" 
-                allowfullscreen 
-                title="Встраиваемое видео">
-            </iframe>
-        </li>
-        <li>Тигр</li>
+      
     </ul>
 </section>
 <section id="about">
     <h2>Узнай больше!</h2>
-    <p>Хотите узнать больше о животных? Вот несколько полезных ссылок:</p>
+    <p>Хотите узнать больше о животных? Вот 5 полезных ссылок:</p>
     <ul>
         <li><a href="https://ru.wikipedia.org/wiki/%D0%9A%D0%B5%D0%BD%D0%B3%D1%83%D1%80%D1%83" target="_blank">Кенгуру на Википедии</a></li>
         <li><a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BB%D1%8C%D1%84%D0%B8%D0%BD" target="_blank">Дельфины на Википедии</a></li>
@@ -64,6 +54,44 @@
     </ul>
     <h2>Заключение</h2>
     <p>Животные — удивительные существа, и каждый из них уникален. Исследуйте мир животных и открывайте для себя новое!</p>
+</section>
+<section>
+    <h2>Хотите посмотреть на удивительных животных?</h2>
+    <img id="slider" src="" alt="Изображение" width="194" height="182">
+    <br>
+    <button class="my_button" onclick="previousimage()">предыдущее</button>
+    <button class="my_button" onclick="nextimage()">следущее</button>
+    <script>
+        //Масив с изображением из папки images
+        const images=[
+             'images/белка.jpg',
+            'images/жираф.webp',
+            'images/пантера.jpg',
+            'images/ягуар.jpg',
+        ];
+        let currentIndex=0;
+        
+        //функция для обновления изображения
+        function updateImage(){
+           const slider=document.getElementById('slider');
+           slider.src = images[currentIndex];
+        }
+        //функция для перехода к следующему изображению
+        function nextimage(){
+           currentIndex=(currentIndex+1)% images.length;//Циклический переход
+              updateImage();
+        }
+          //функция для перехода к предыдущему изображению
+        function previousimage() {
+           currentIndex=(currentIndex - 1 +  images.length) % images.length;//Циклический переход
+              updateImage();
+
+        }
+        //Инициализация слайдера с первым изображением
+        updateImage();
+    </script>
+    <h2>Заключение</h2>
+    <p>Животные-удивительные существа,и каждый из них уникален.Исследуйте мир животных и открывайте для себя новое.</p>
 </section>
 <aside>
     <a href="./test_1.html">Внутренняя ссылка</a>
@@ -77,7 +105,7 @@
     <p>Контактные данные о разработчике</p>
     <a href="https://www.instagram.com/renatkolchuk/" target="_blank">Instagram Кольчука Рената</a>
     <br>
-    <a href="https://www.instagram.com/renatkolchuk/" target="_blank">Instagram Кольчука Рената</a>
+    
 </footer>
 </body>
 </html>
